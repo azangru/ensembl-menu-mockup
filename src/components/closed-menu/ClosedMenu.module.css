@@ -1,0 +1,30 @@
+.menu {
+  grid-row: navigation;
+  height: 40px;
+  background-color: #f1f2f4;
+  display: flex;
+  align-items: center;
+  position: relative;
+  padding-left: 40px;
+}
+
+.menuItem {
+  color: #0099ff;
+  cursor: pointer;
+  display: inline-block;
+  padding-bottom: 0.2rem;
+  margin-top: calc(0.2rem + 1px);
+  border-bottom: 1px solid transparent;
+}
+
+.menuItem:hover {
+  border-bottom: 1px solid #0099ff;
+}
+
+.menuItem + .menuItem {
+  margin-left: 2em;
+}
+
+.menuItemActive {
+  color: #1b2c39;
+}
