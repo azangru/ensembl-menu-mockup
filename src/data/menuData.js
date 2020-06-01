@@ -8,13 +8,16 @@ const topData = [
     getItems: () => usingEnsemblData
   },
   {
-    name: 'Training'
+    name: 'Training',
+    getItems: () => trainingData
   },
   {
-    name: 'Ensembl annotation & prediction'
+    name: 'Ensembl annotation & prediction',
+    getItems: () => ensemblAnnotationData
   },
   {
-    name: 'Data releases'
+    name: 'Data releases',
+    getItems: () => dataReleasesData
   },
   {
     name: 'Known bugs'
@@ -48,13 +51,16 @@ const usingEnsemblData = [
     getItems: () => viewingEnsemblDataItems
   },
   {
-    name: 'Getting Ensembl data'
+    name: 'Getting Ensembl data',
+    getItems: () => gettingEnsemblDataItems
   },
   {
-    name: 'Using other data'
+    name: 'Using other data',
+    getItems: () => usingOtherDataItems
   },
   {
-    name: 'Tools'
+    name: 'Tools',
+    getItems: () => toolsItems
   },
   {
     name: 'External references'
@@ -79,18 +85,89 @@ const usingEnsemblData = [
   }
 ];
 
+const trainingData = [
+  {
+    name: 'Training events'
+  },
+  {
+    name: 'Online training'
+  },
+  {
+    name: 'Training materials',
+    getItems: () => getSimpleArticles(0)
+  },
+  {
+    name: 'Training exercises',
+    getItems: () => getSimpleArticles(10)
+  }
+];
+
+const ensemblAnnotationData = [
+  {
+    name: 'Genes & transcripts',
+    getItems: () => getSimpleArticles(0)
+  },
+  {
+    name: 'Variation',
+    getItems: () => getSimpleArticles(10)
+  },
+  {
+    name: 'Regulation',
+    getItems: () => getSimpleArticles(20)
+  },
+  {
+    name: 'Comparative genomics',
+    getItems: () => getSimpleArticles(30)
+  },
+  {
+    name: 'Assemblies',
+    getItems: () => getSimpleArticles(40)
+  },
+  {
+    name: 'Annotation methods'
+  },
+  {
+    name: 'Identifiers'
+  },
+  {
+    name: 'Coordinate systems'
+  },
+  {
+    name: 'Pipelines'
+  },
+  {
+    name: 'RNA-Seq & transcriptomes'
+  },
+  {
+    name: 'Supporting evidence'
+  },
+];
+
+const dataReleasesData = [
+  {
+    name: 'Release cycle'
+  },
+  {
+    name: 'Archives'
+  },
+];
+
 const viewingEnsemblDataItems = [
   {
-    name: 'Genome browser'
+    name: 'Genome browser',
+    getItems: () => getSimpleArticles(0)
   },
   {
-    name: 'Entity viewer'
+    name: 'Entity viewer',
+    getItems: () => getSimpleArticles(10)
   },
   {
-    name: 'Sequence viewer'
+    name: 'Sequence viewer',
+    getItems: () => getSimpleArticles(20)
   },
   {
-    name: 'Variation viewer'
+    name: 'Variation viewer',
+    getItems: () => getSimpleArticles(30)
   },
   {
     name: 'Comparative views'
@@ -101,7 +178,52 @@ const viewingEnsemblDataItems = [
   {
     name: 'Looking at genes & transcripts'
   }
-]
+];
 
+const gettingEnsemblDataItems = [
+  {
+    name: 'Quick downloads'
+  },
+  {
+    name: 'Custom downloads'
+  },
+  {
+    name: 'REST'
+  },
+  {
+    name: 'APIs'
+  },
+  {
+    name: 'Using FTP'
+  },
+];
+
+const usingOtherDataItems = [
+  {
+    name: 'Supported file formats'
+  },
+  {
+    name: 'Trackhubs'
+  },
+  {
+    name: 'URL uploads'
+  },
+  {
+    name: 'Import from external projects'
+  }
+];
+
+const toolsItems = [
+  {
+    name: 'VEP'
+  },
+  {
+    name: 'BLAST'
+  }
+];
+
+const getSimpleArticles = (initialNumber = 0) => [...(new Array(10))].map((_, index) => ({
+  name: `article ${index + 1 + initialNumber}`
+}));
 
 export default topData;
