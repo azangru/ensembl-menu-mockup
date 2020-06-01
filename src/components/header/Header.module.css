@@ -1,0 +1,45 @@
+.top {
+  display: flex;
+  align-items: center;
+  background-color: #1b2c39;
+  height: 25px;
+  padding: 2px 20px;
+}
+
+.top svg {
+  height: 16px;
+  fill: #0099ff;
+}
+
+.topName {
+  color: white;
+  font-weight: 700;
+  margin-left: 5px;
+}
+
+.launchBar {
+  display: flex;
+  height: 54px;
+  border-bottom: 1px solid #b7c0c8;
+  padding: 11px 6px;
+}
+
+.launchBar svg {
+  height: 30px;
+  background-color: #0099ff;
+  fill: white;
+  margin: 0 12px;
+}
+
+.launchBarSlot {
+  padding: 0 15px;
+  border-right: 1px solid #b7c0c8;
+}
+
+.launchBarSlot:last-child {
+  border-right: none;
+}
+
+.launchBarSlot:last-child svg {
+  background-color: #1b2c39; 
+}

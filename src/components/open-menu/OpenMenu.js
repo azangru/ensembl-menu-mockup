@@ -5,7 +5,10 @@ import styles from './OpenMenu.module.css';
 
 const OpenMenu = (props) => {
   return (
-    <div className={styles.menu}>
+    <div
+      className={styles.menu}
+      onMouseLeave={props.onLeave}
+    >
       <Top {...props} />
       <Bottom {...props} />
     </div>
@@ -89,7 +92,8 @@ const Submenu = (props) => {
         onMouseEnter={() => handleMouseEnter(item)}
         onClick={() => props.onClick(item)}
       >
-        {item.name}
+        <span>{item.name}</span>
+        { item.getItems && <span><Chevron /></span> }
       </li>
     )
   });
@@ -103,5 +107,12 @@ const Submenu = (props) => {
     </>
   );
 };
+
+const Chevron = () => (
+  <svg
+	 viewBox="0 0 28 28">
+    <polygon points="9,6.7 16.3,14 9,21.3 12.7,21.3 20,14 12.7,6.7 "/>
+  </svg>
+);
 
 export default OpenMenu;

@@ -5,7 +5,7 @@ import styles from './Content.module.css';
 const Content = (props) => {
   return (
     <div className={styles.content}>
-      Content for {props.content}
+      {props.content}
     </div>
   );
 };

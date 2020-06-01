@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 
+import Header from './components/header/Header';
 import ClosedMenu from './components/closed-menu/ClosedMenu';
 import OpenMenu from './components/open-menu/OpenMenu';
 import Content from './components/content/Content';
@@ -30,6 +31,10 @@ function App() {
     setSelectedTopMenuItem(selectedTopMenuItem.name);
   };
 
+  const onOpenMenuLeave = () => {
+    setIsShowingMenu(false);
+  };
+
   const closedMenu = (
     <ClosedMenu
       data={data}
@@ -46,11 +51,13 @@ function App() {
       hoveredItem={hoveredTopMenuItem}
       onHoverTop={onClosedMenuHover}
       onClick={onClick}
+      onLeave={onOpenMenuLeave}
     />
   );
 
   return (
     <div className="App">
+      <Header/>
       { !isShowingMenu
         ? closedMenu
         : openMenu
